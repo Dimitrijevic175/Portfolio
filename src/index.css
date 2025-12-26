@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import "tailwindcss";
+
+@theme{
+  --font-sans: "Nunito Sans", sans-serif;
+  --hover-bg: #bec8d9;
+  --hover-bg-dark: #1e293b;
+}
+
+:root {
+  --bg: #F3F4F6;
+  --fg: #111827;
+}
+
+body {
+  @apply font-sans;
+  background-color: var(--bg);
+  color: var(--fg);
+  transition: background-color 0.3s ease;
+}
+
+.dark body {
+  background-color: #121212;
+  color: #F3F4F6;
+}
+
+.dark a.nav-link:hover {
+  background-color: var(--hover-bg-dark);
+}
+
+/* Navbar link hover */
+a.nav-link {
+  @apply block px-3 py-1 rounded cursor-pointer transition no-underline;
+  background-color: transparent;
+}
+
+a.nav-link:hover {
+  background-color: var(--hover-bg);
+}
+
+/* Mobile dropdown background */
+.mobile-menu {
+  background-color: var(--bg);
+  transition: background-color 0.3s;
+}
+
+.dark .mobile-menu {
+  background-color: #121212;
+}
+
+/* Dropdown links */
+.mobile-menu a.nav-link:hover {
+  background-color: var(--hover-bg);
+}
+
+.dark .mobile-menu a.nav-link:hover {
+  background-color: var(--hover-bg-dark);
+}
