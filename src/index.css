@@ -5,7 +5,9 @@
   --font-sans: "Nunito Sans", sans-serif;
   --hover-bg: #bec8d9;
   --hover-bg-dark: #1e293b;
+  --muted-text: #5d6575;
 }
+
 
 :root {
   --bg: #F3F4F6;
@@ -24,6 +26,22 @@ body {
   color: #F3F4F6;
 }
 
+.resume-btn {
+  @apply flex items-center px-4 py-2 mt-4 rounded-full border-2 border-blue-500 text-blue-500 font-sans font-bold transition-colors space-x-2 bg-transparent;
+}
+
+.resume-btn:hover {
+  @apply bg-blue-200;
+}
+
+.dark .resume-btn:hover {
+  @apply bg-blue-900;
+}
+
+
+
+/* ----- NAVBAR SEKCIJA ----- */
+
 .dark a.nav-link:hover {
   background-color: var(--hover-bg-dark);
 }
@@ -33,6 +51,8 @@ a.nav-link {
   @apply block px-3 py-1 rounded cursor-pointer transition no-underline;
   background-color: transparent;
 }
+
+
 
 a.nav-link:hover {
   background-color: var(--hover-bg);
@@ -56,3 +76,83 @@ a.nav-link:hover {
 .dark .mobile-menu a.nav-link:hover {
   background-color: var(--hover-bg-dark);
 }
+
+/* Univerzalni hover za navbar elemente */
+.nav-hover {
+  @apply px-3 py-1 rounded cursor-pointer transition;
+  background-color: transparent;
+}
+
+.nav-hover:hover {
+  background-color: var(--hover-bg);
+}
+
+.dark .nav-hover:hover {
+  background-color: var(--hover-bg-dark);
+}
+
+/* ----- HERO SEKCIJA ----- */
+
+.typewriter h2 {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0; /* važno: start width 0 */
+
+  /* cursor */
+  border-right: 0.08em solid currentColor;
+
+  /* animacije */
+  animation:
+          typing 2.8s steps(24, end) 0.3s forwards,
+          caret-blink 1.9s step-end infinite;
+
+  letter-spacing: 0.05em;
+}
+
+/* typing effect */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* blinking caret */
+@keyframes caret-blink {
+  0%, 50%, 100% { border-color: currentColor; }
+  25%, 75% { border-color: transparent; }
+}
+
+
+
+.subtitle-animate {
+  opacity: 0;
+  transform: translateY(16px);
+
+  animation: subtitleFadeUp 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+
+}
+
+/* animacija */
+@keyframes subtitleFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes chevron-fade {
+  0%, 20% { opacity: 0; transform: translateY(-10px); }
+  50% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(10px); }
+}
+
+.animate-chevron > * {
+  animation: chevron-fade 1.5s infinite;
+}
+
+.animate-chevron > *:nth-child(1) { animation-delay: 0s; }
+.animate-chevron > *:nth-child(2) { animation-delay: 0.3s; }
+.animate-chevron > *:nth-child(3) { animation-delay: 0.6s; }
+
