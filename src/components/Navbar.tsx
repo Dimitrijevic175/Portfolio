@@ -21,8 +21,8 @@ export default function Navbar({ dark, setDark }: NavbarProps) {
             {/* Desktop layout */}
             <div className="hidden md:flex items-center justify-between w-full">
                 {/* Logo */}
-                <h1 className="text-2xl font-bold font-sans text-blue-700 dark:text-yellow-400">
-                    Maksim
+                <h1 className="text-l font-bold font-sans nav-hover">
+                    Maksim Dimitrijević
                 </h1>
 
                 {/* Links right */}
@@ -41,7 +41,7 @@ export default function Navbar({ dark, setDark }: NavbarProps) {
                 </ul>
 
                 {/* Dark mode button */}
-                <button onClick={() => setDark(!dark)}>
+                <button onClick={() => setDark(!dark)} className="nav-hover">
                     {dark ? <SunIcon className="w-5 h-5" /> : <MoonIcon className="w-5 h-5" />}
                 </button>
             </div>
@@ -50,19 +50,19 @@ export default function Navbar({ dark, setDark }: NavbarProps) {
             <div className="flex md:hidden w-full justify-between items-center">
                 {/* Hamburger menu left */}
                 <button
-                    className="px-3 py-1 rounded border border-gray-400 dark:border-gray-600"
+                    className="px-3 py-1 rounded border border-gray-400 dark:border-gray-600 nav-hover"
                     onClick={() => setMenuOpen(!menuOpen)}
                 >
                     ☰
                 </button>
 
                 {/* Logo center */}
-                <h1 className="text-2xl font-bold font-sans text-blue-700 dark:text-yellow-400">
-                    Maksim
+                <h1 className="text-l font-bold font-sans nav-hover">
+                    Maksim Dimitrijević
                 </h1>
 
                 {/* Dark mode button right */}
-                <button onClick={() => setDark(!dark)}>
+                <button onClick={() => setDark(!dark)} className="nav-hover">
                     {dark ? <SunIcon className="w-5 h-5" /> : <MoonIcon className="w-5 h-5" />}
                 </button>
             </div>
