@@ -6,6 +6,8 @@
   --hover-bg: #bec8d9;
   --hover-bg-dark: #1e293b;
   --muted-text: #5d6575;
+  --bg-light: #F3F4F6;
+  --bg-dark: #121212;
 }
 
 
@@ -26,6 +28,16 @@ body {
   color: #F3F4F6;
 }
 
+.navbar {
+  background-color: #F3F4F6 !important; /* svetli mod */
+}
+
+.dark .navbar {
+  background-color: #111827 !important; /* dark mode */
+}
+
+
+
 .resume-btn {
   @apply flex items-center px-4 py-2 mt-4 rounded-full border-2 border-blue-500 text-blue-500 font-sans font-bold transition-colors space-x-2 bg-transparent;
 }
@@ -36,6 +48,14 @@ body {
 
 .dark .resume-btn:hover {
   @apply bg-blue-900;
+}
+
+.img-border {
+  @apply border-[var(--bg-light)]
+}
+
+.dark .img-border {
+  @apply border-[var(--bg-dark)]
 }
 
 
@@ -156,3 +176,42 @@ a.nav-link:hover {
 .animate-chevron > *:nth-child(2) { animation-delay: 0.3s; }
 .animate-chevron > *:nth-child(3) { animation-delay: 0.6s; }
 
+/* ----- ABOUT ME SEKCIJA ----- */
+
+/* ----- Scroll reveal animations ----- */
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ----- SKILLS SEKCIJA ----- */
+.cards {
+  background-color: #F3F4F6
+}
+
+.dark .cards {
+  background-color: #111827;
+  box-shadow: 0 4px 8px -1px rgba(255, 255, 255, 0.1), 0 2px 8px -1px rgba(255, 255, 255, 0.06);
+}
+
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
