@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import {SunIcon, MoonIcon} from 'lucide-react';
+import {SunIcon, MoonIcon,Menu,X} from 'lucide-react';
 
 interface NavbarProps {
     dark: boolean;
@@ -141,11 +141,11 @@ export default function Navbar({ dark, setDark }: NavbarProps) {
                     className="px-3 py-1 rounded border border-gray-400 dark:border-gray-600 nav-hover"
                     onClick={() => setMenuOpen(!menuOpen)}
                 >
-                    ☰
+                    {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
                 </button>
 
                 {/* Logo center */}
-                <h1 className="text-l font-bold font-sans nav-hover">
+                <h1 className="text-l font-bold font-sans nav-hover" onClick={scrollToTopSlow}>
                     Maksim Dimitrijević
                 </h1>
 
