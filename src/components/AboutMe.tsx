@@ -59,7 +59,7 @@ export default function AboutMe() {
                         <p className="slide-up about-paragraph flex items-center gap-3">
                             <span>🧠</span>
                             <span className="flex-1">
-                                I'm experienced in full-stack web development, particularly with <strong>TypeScript</strong> and <strong>Java</strong>. <strong>ReactJS/NextJS</strong> is my frontend framework of choice, and I have worked with <strong>NodeJS</strong> and <strong>Spring Boot</strong> on backend projects. I also enjoy building scalable and maintainable applications for clients as a freelance developer.
+                                I'm experienced in full-stack web development, particularly with <strong>TypeScript</strong> and <strong>Java</strong>. <strong>ReactJS</strong> is my frontend framework of choice, and I have worked with <strong>Spring Boot</strong> on backend projects. I also enjoy building scalable and maintainable applications for clients as a freelance developer.
                             </span>
                         </p>
                     </div>

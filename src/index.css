@@ -215,3 +215,34 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
 }
+/* ----- PROJECT SEKCIJA ----- */
+
+.tags {
+  background-color: #002100;
+  color: #90c2ab;
+}
+
+.project-cards {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25), 0 4px 10px -2px rgba(0, 0, 0, 0.15);
+}
+
+.dark .project-cards {
+  box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.2), 0 4px 10px -2px rgba(255, 255, 255, 0.1);
+}
+
+/* ----- PROJECT BUTTON ----- */
+.project-btn {
+  @apply inline-flex items-center justify-center px-4 py-2 mt-4 rounded-full border-2 border-blue-500 text-blue-500 font-sans font-bold transition-colors bg-transparent;
+}
+
+.project-btn:hover {
+  @apply bg-blue-200;
+}
+
+.dark .project-btn:hover {
+  @apply bg-blue-900;
+}
+
+.project-btn span {
+  @apply mr-2; /* razmak između teksta i ikonice */
+}

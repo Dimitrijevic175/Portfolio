@@ -6,24 +6,30 @@ import AboutMe from "./components/AboutMe.tsx";
 import Skills from "./components/Skills.tsx";
 import Contact from "./components/Contact.tsx";
 import Footer from "./components/Footer.tsx";
+import Projects from "./components/Projects.tsx";
+import SEO from "./components/SEO.tsx";
 
 function App() {
     const [dark, setDark] = useDarkMode();
 
     return (
-        <div className={dark ? 'dark' : ''}>
-            <div className="min-h-screen font-sans bg-background dark:bg-foreground text-foreground dark:text-background">
-                <Navbar dark={dark} setDark={setDark} />
-                <main className="scroll-smooth">
-                    <Hero />
-                    <AboutMe />
-                    <Skills />
-                    <Contact />
-                    {/* Ostale sekcije: About, Skills, Projects, Contact */}
-                </main>
-                <Footer dark={dark} setDark={setDark} />
+        <>
+            <SEO />
+            <div className={dark ? 'dark' : ''}>
+                <div className="min-h-screen font-sans bg-background dark:bg-foreground text-foreground dark:text-background">
+                    <Navbar dark={dark} setDark={setDark} />
+                    <main className="scroll-smooth">
+                        <Hero />
+                        <AboutMe />
+                        <Skills />
+                        <Projects />
+                        <Contact />
+                        {/* Ostale sekcije: About, Skills, Projects, Contact */}
+                    </main>
+                    <Footer dark={dark} setDark={setDark} />
+                </div>
             </div>
-        </div>
+        </>
     );
 }
 
