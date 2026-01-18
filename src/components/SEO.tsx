@@ -9,8 +9,8 @@ interface SEOProps {
 export default function SEO({
                                 title = "Maksim Dimitrijević",
                                 description = "Computer Science student...",
-                                keywords = "Maksim, Portfolio...",
-                                image = "https://maksimdimitrijevic.vercel.app/favicon2.png",
+                                keywords = "Maksim, Portfolio, Maksim Dimitrijevic, Maksim Dimitrijević, maksim dimitrijevic, maksim dimitrijević",
+                                image = "https://maksimdimitrijevic.vercel.app/preview.png",
                                 url = "https://maksimdimitrijevic.vercel.app"
                             }: SEOProps) {
     return (
