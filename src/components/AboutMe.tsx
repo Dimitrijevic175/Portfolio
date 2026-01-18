@@ -43,7 +43,7 @@ export default function AboutMe() {
                         <p className="slide-up about-paragraph flex items-center gap-3">
                             <span>🎓</span>
                             <span className="flex-1">
-                            I completed my <strong>Bachelor's degree</strong> in Computer Science and am currently pursuing my <strong>Master’s degree</strong> in software engineering at the Faculty of Computing, focusing on modern software development practices.
+                            I completed my <strong>Bachelor's degree</strong> in Computer Science and I am currently pursuing my <strong>Master’s degree</strong> in software engineering at the Faculty of Computing, focusing on modern software development practices.
                             </span>
                             </p>
 
