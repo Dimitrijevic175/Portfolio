@@ -1,12 +1,33 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from "react";
 
 export const useDarkMode = () => {
-    const [dark, setDark] = useState(false);
+    // inicijalizuj stanje iz localStorage ili sistemske preferencije
+    const [isDark, setIsDark] = useState(() => {
+        if (typeof window !== "undefined") {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme === "dark") return true;
+            if (savedTheme === "light") return false;
 
+            // fallback na sistemsku preferencu
+            return window.matchMedia("(prefers-color-scheme: dark)").matches;
+        }
+        return false;
+    });
+
+    // efekat za dodavanje/uklanjanje klase i čuvanje u localStorage
     useEffect(() => {
-        if (dark) document.documentElement.classList.add('dark');
-        else document.documentElement.classList.remove('dark');
-    }, [dark]);
+        const root = document.documentElement;
+        if (isDark) {
+            root.classList.add("dark");
+            localStorage.setItem("theme", "dark");
+        } else {
+            root.classList.remove("dark");
+            localStorage.setItem("theme", "light");
+        }
+    }, [isDark]);
 
-    return [dark, setDark] as const;
+    // toggle funkcija
+    const toggleDarkMode = () => setIsDark(prev => !prev);
+
+    return [isDark, toggleDarkMode] as const;
 };
